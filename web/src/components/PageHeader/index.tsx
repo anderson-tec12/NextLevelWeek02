@@ -11,7 +11,7 @@ import "./styles.css";
 //? propriedade obrigatoria
 interface PageHeaderProps {
   title: string;
-  value?: number;
+  description?: string;
 }
 
 const PageHeader: React.FC<PageHeaderProps> = (props) => {
@@ -27,6 +27,8 @@ const PageHeader: React.FC<PageHeaderProps> = (props) => {
 
       <div className="header-content">
         <strong>{title}</strong>
+        {props.description && <p>{props.description}</p>}
+
         {props.children}
       </div>
     </header>
